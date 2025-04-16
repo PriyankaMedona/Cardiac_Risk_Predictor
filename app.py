@@ -29,9 +29,12 @@ with st.form(key='user_input_form'):
     # Dictionary to store user input values
     user_data = {}
 
+    # Display questions in a more user-friendly way
+    st.write("Please answer the following questions based on your health and lifestyle:")
+
     for feature in selected_features:
-        # You can customize the type of input widget based on the feature type
-        user_data[feature] = st.number_input(f"Enter value for {feature}", min_value=0.0, step=0.1)
+        # Provide a description for the feature, and allow user to enter the value
+        user_data[feature] = st.number_input(f"Enter the value for {feature} (e.g., your age, blood pressure, etc.)", min_value=0.0, step=0.1)
 
     # Submit button for the form
     submit_button = st.form_submit_button(label='Submit')
